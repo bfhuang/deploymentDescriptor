@@ -5,8 +5,8 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean name="messageFromApplicationContext" class="webXml.MyMessage">
-        <constructor-arg index="0" value="messageFromApplicationContext"/>
+    <bean name="messageFromRedefinedApplicationContextOfSpring" class="webXml.MyMessage">
+        <constructor-arg index="0" value="messageFromRedefinedApplicationContextOfSpring"/>
     </bean>
 
 </beans>

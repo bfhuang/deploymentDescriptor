@@ -11,19 +11,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MessageController {
 
     @Autowired
-    MyMessage messageFromWebContainerBean;
-
-    @Autowired
     MyMessage messageFromSpringContainerBean;
 
-    @Autowired
-    MyMessage messageFromApplicationContext;
+//    @Autowired
+//    MyMessage messageFromRedefinedApplicationContextOfSpring;
+
+//    @Autowired
+//    MyMessage messageFromDefaultApplicationContextOfSpring;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String hello(ModelMap model){
-        model.addAttribute("messageFromWebContainerBean", messageFromWebContainerBean.getMessage());
+    public String hello(ModelMap model) {
         model.addAttribute("messageFromSpringContainerBean", messageFromSpringContainerBean.getMessage());
-        model.addAttribute("messageFromApplicationContext", messageFromApplicationContext.getMessage());
+//        model.addAttribute("messageFromRedefinedApplicationContextOfSpring", messageFromRedefinedApplicationContextOfSpring.getMessage());
+//        model.addAttribute("messageFromDefaultApplicationContextOfSpring", messageFromDefaultApplicationContextOfSpring.getMessage());
         return "hello.jsp";
     }
 }

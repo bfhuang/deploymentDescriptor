@@ -10,6 +10,7 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <!--configure the configuration file for spring-->
         <!--the default one is servlet-name-servlet.xml under webapp/WEB-INF-->
+        <!--this one can be accessed in the init method or getServletContext().getInitParameter("context/param") in other method-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:springMvcServlet.xml</param-value>
@@ -21,16 +22,26 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!--define the configuration file-->
-    <!--the default one is applicationContext.xml under webapp/WEB-INF-->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:beanInWebContainer.xml</param-value>
-    </context-param>
+    <!--define the configuration file of spring-->
+    <!--default one is applicationContext.xml in classpath-->
+    <!--<context-param>-->
+        <!--<param-name>contextConfigLocation</param-name>-->
+        <!--<param-value>classpath:definedApplicationContext.xml</param-value>-->
+    <!--</context-param>-->
 
     <!--load the configuration file defined by context param-->
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+    <!--</listener>-->
+
+    <servlet>
+        <servlet-name>jspServlet</servlet-name>
+        <jsp-file>/jspServlet.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>jspServlet</servlet-name>
+        <url-pattern>/jspServlet</url-pattern>
+    </servlet-mapping>
 
 </web-app>

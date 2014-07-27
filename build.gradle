@@ -1,7 +1,7 @@
-apply plugin : 'idea'
-apply plugin : 'java'
-apply plugin : 'war'
-apply plugin : 'jetty'
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'jetty'
 
 task "createDir" << {
     sourceSets*.java.srcDirs*.each { it.mkdirs() }
@@ -13,7 +13,8 @@ repositories {
 }
 
 dependencies {
-    compile 'org.springframework:spring-webmvc:4.0.6.RELEASE'
+    compile 'org.springframework:spring-webmvc:4.0.6.RELEASE',
+            'javax.servlet:servlet-api:2.5'
 
     testCompile 'junit:junit:4.11'
 }

@@ -16,6 +16,6 @@
         <!--<property name="suffix" value=".jsp"/>-->
     <!--</bean>-->
 
-    <import resource="classpath:beanInSpringContainer.xml"/>
+    <!--<import resource="classpath:beanInSpringContainer.xml"/>-->
 
 </beans>
