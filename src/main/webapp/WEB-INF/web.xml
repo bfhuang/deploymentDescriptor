@@ -23,16 +23,19 @@
     </servlet-mapping>
 
     <!--define the configuration file of spring-->
-    <!--default one is applicationContext.xml in classpath-->
-    <!--<context-param>-->
-        <!--<param-name>contextConfigLocation</param-name>-->
-        <!--<param-value>classpath:definedApplicationContext.xml</param-value>-->
-    <!--</context-param>-->
+    <!--default one is applicationContext.xml under webapp/WEB-INF-->
+    <!--this is the super container of spring-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:definedApplicationContext.xml
+            classpath:applicationContext.xml
+        </param-value>
+    </context-param>
 
-    <!--load the configuration file defined by context param-->
-    <!--<listener>-->
-        <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
-    <!--</listener>-->
+    <!--load the configuration default and defined by context param-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
     <servlet>
         <servlet-name>jspServlet</servlet-name>
