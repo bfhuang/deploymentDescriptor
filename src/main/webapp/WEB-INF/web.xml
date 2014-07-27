@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+        http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <servlet>
+        <servlet-name>springMvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--configure the configuration file for spring-->
+        <!--the default one is servlet-name-servlet.xml under webapp/WEB-INF-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springMvcServlet.xml</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>springMvc</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!--define the configuration file-->
+    <!--the default one is applicationContext.xml under webapp/WEB-INF-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:beanInWebContainer.xml</param-value>
+    </context-param>
+
+    <!--load the configuration file defined by context param-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+</web-app>
