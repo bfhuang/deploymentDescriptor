@@ -17,6 +17,6 @@
     <!--</bean>-->
 
     <!--this is the sub-container of spring-->
-    <import resource="classpath:beanInSpringContainer.xml"/>
+    <import resource="classpath:subSpringContainerConfig.xml"/>
 
 </beans>

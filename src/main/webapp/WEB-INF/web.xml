@@ -13,7 +13,7 @@
         <!--this one can be accessed in the init method or getServletContext().getInitParameter("context/param") in other method-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:springMvcServlet.xml</param-value>
+            <param-value>classpath:springDispatcherServlet.xml</param-value>
         </init-param>
     </servlet>
 
@@ -27,8 +27,7 @@
     <!--this is the super container of spring-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:definedApplicationContext.xml
-            classpath:applicationContext.xml
+        <param-value>classpath:superSpringContainerConfig.xml
         </param-value>
     </context-param>
 
